@@ -1,4 +1,5 @@
-﻿using University.DesignPatterns.Game.Core;
+﻿using University.DesignPatterns.Game.Armour;
+using University.DesignPatterns.Game.Core;
 using University.DesignPatterns.Game.Weapons;
 
 namespace University.DesignPatterns.Game.Characters
@@ -6,10 +7,10 @@ namespace University.DesignPatterns.Game.Characters
     public abstract class Character :
         IDamagable, IAttackable
     {
+        public bool IsAlive { get; protected set; }
         public string Name { get; protected set; }
         public Health Health { get; protected set; }
-        public IResist Resist { get; protected set; }
-        public bool IsAlive { get; protected set; }
+        public Armor Armor { get; protected set; }
         public Weapon Weapon { get; protected set; }
 
         public Character(string name, Weapon weapon, Health health, IResist resist, bool isAlive = true)
